@@ -21,8 +21,16 @@ def play_joke(choice):
     for joke in jokes: #(Iteration)
         if joke["topic"] == choice: #(selection)
             tell_joke(joke["who"], joke["punchline"])
-            #add a else state and change the list with append (change this)
-        
+        return 
+    else: 
+        jokes.append({ 
+            "topic": choice, 
+            "who": "New joke", 
+            "punchline": "This joke was just added!"
+        })
+        print("That joke didn't exist, so a new one was added.")
+        return
+    
 joke = input("Do you want to hear a joke?")
 if joke == "no":
     print("Okay bye!")
@@ -40,7 +48,7 @@ if joke == "finished":
     final_score = rate * 10 
     print(str(final_score) + " percent satisfaction")
 
-    friend = input("Would you recommed to others?")
+    friend = input("Would you recommend to others?")
 
     if friend == "yes" or friend == "maybe":
         print("Thanks, we appreciate it!")
