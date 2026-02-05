@@ -1,8 +1,12 @@
 
-# Luis Zuniga-Urzua, Xavier
+# # Luis Zuniga-Urzua, Xavier
 
-#Knock-Knock Joke Program 
-#List: storing the jokes 
+# #Knock-Knock Joke Program 
+# #List: storing the jokes 
+
+jokes1 = ['robbers', 'tanks', 'pencils']
+
+
 jokes = [
     {"topic": "robbers", "who": "Calder", "punchline": "Calder police - I've been robbed!"},
     {"topic": "tanks", "who": "Tank", "punchline": "You are welcome!"}, 
@@ -11,10 +15,10 @@ jokes = [
 
 #Abstraction 
 #Function --> tells the joke using parameters 
-def tell_joke(who, punchline):
-    input("Knock Knock")
-    input(who)
-    input(punchline)
+      
+
+
+
 
 #Function --> finds and tells selcted joke 
 def play_joke(choice):
@@ -39,8 +43,8 @@ if joke == "no":
 while joke == "yes":
     print("Great, Let's play")
     question = input("Do you want to hear a joke about robbers, tanks, or pencils? ")
-    play_joke(question)
-    joke = input("Do you want to hear another joke or are you finished?")
+#     play_joke(question)
+#     joke = input("Do you want to hear another joke or are you finished?")
 
 #Selection
 if joke == "finished":
@@ -56,3 +60,4 @@ if joke == "finished":
         print("Sorry you didn't enjoy.")
 
 
+play_joke()
