@@ -1,0 +1,53 @@
+# Knock-Knock Joke Program
+# List (data abstraction)
+jokes = [
+    {"topic": "robbers", "who": "Calder", "punchline": "Calder police - I've been robbed!"},
+    {"topic": "tanks", "who": "Tank", "punchline": "You are welcome!"},
+    {"topic": "pencils", "who": "Broken pencil", "punchline": "Never mind, it's pointless!"}
+]
+
+
+# Function 1: abstraction with parameters
+def tell_joke(who, punchline):
+    print("Knock knock!")
+    print("Who's there?")
+    print(who + " who?")
+    print(punchline)
+
+
+# Function 2: selection, iteration, and list change
+def play_joke(choice):
+    for joke in jokes:  # Iteration
+        if joke["topic"] == choice:  # Selection
+            tell_joke(joke["who"], joke["punchline"])
+            return
+
+
+    # Different path if topic is not found
+    print("That joke does not exist.")
+    add = input("Do you want to add a new joke for this topic? (yes/no): ")
+
+
+    if add == "yes":  # If / else statement
+        jokes.append({   # ORIGINAL list is changed here
+            "topic": choice,
+            "who": "New joke",
+            "punchline": "This joke was added using append!"
+        })
+        print("New joke added to the list!")
+    else:
+        print("No changes were made.")
+
+
+# Main sequence
+answer = input("Do you want to hear a joke? (yes/no): ")
+
+
+while answer == "yes":  # Iteration
+    topic = input("Choose a topic: robbers, tanks, or pencils: ")
+    play_joke(topic)
+    answer = input("Do you want another joke? (yes/no): ")
+
+
+print("Thanks for playing!")
+ 
